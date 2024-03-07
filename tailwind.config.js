@@ -4,5 +4,6 @@ export default {
   theme: {
     extend: {},
   },
+  color: { "primary-col": "#155679" },
   plugins: [],
 };
