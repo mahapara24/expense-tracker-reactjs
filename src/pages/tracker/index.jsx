@@ -46,12 +46,9 @@ export const ExpenseTracker = () => {
             {name}'s Expense Tracker
             {profilePhoto && (
               <div className="ml-8 ">
-                <img
-                  className="sm:h-20 h-12  rounded-[50px]"
-                  src={profilePhoto}
-                />
+                <img className="h-20  rounded-[50px]" src={profilePhoto} />
                 <button
-                  className="text-white bg-gray-700 font-poppins  hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium sm:rounded-full rounded-lg text-[8px] m-2 py-1 sm:text-sm sm:px-3 sm:py-2 text-center  sm:mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
+                  className="text-white bg-gray-700 font-poppins  hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full  text-[8px] m-2  sm:text-sm sm:px-3 py-2 text-center  mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
                   onClick={signUserOut}
                 >
                   Sign Out
@@ -133,7 +130,7 @@ export const ExpenseTracker = () => {
             </label>
             <div className="flex justify-center items-center pt-4">
               <button
-                className="text-white items-center bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white items-center bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium sm:rounded-full rounded text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="submit"
               >
                 Add Transaction
@@ -144,7 +141,7 @@ export const ExpenseTracker = () => {
       </div>
 
       {/* transactions */}
-      <div className="grid grid-cols-3 bg-gray-200 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-3 bg-gray-100 sm:grid-cols-4 gap-4">
         <h2 className="col-span-3 sm:col-span-4 text-center text-gray-900 font-poppins font-medium sm:text-3xl text-xl py-4">
           Transactions
         </h2>
