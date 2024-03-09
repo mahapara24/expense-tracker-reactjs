@@ -39,10 +39,10 @@ export const ExpenseTracker = () => {
   };
   return (
     <>
-      <div className="text-gray-900  bg-[#0B1D51]/50 p-4 ">
+      <div className="text-gray-900 bg-gray-100 p-4 ">
         <div className="flex  flex-col items-center justify-between p-2 py-4">
           {" "}
-          <h2 className="mb-4 text-xl font-poppins font-medium text-[#FDE74C] flex text-center leading-none tracking-tight md:text-2xl lg:text-4xl  ">
+          <h2 className="mb-4 text-xl font-poppins font-medium text-black flex text-center leading-none tracking-tight md:text-2xl lg:text-4xl  ">
             {name}'s Expense Tracker
             {profilePhoto && (
               <div className="ml-8 ">
@@ -51,7 +51,7 @@ export const ExpenseTracker = () => {
                   src={profilePhoto}
                 />
                 <button
-                  className="text-white bg-gray-700 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium sm:rounded-full rounded-lg text-[8px] m-2 py-1 sm:text-sm sm:px-3 sm:py-2 text-center  sm:mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
+                  className="text-white bg-gray-700 font-poppins  hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium sm:rounded-full rounded-lg text-[8px] m-2 py-1 sm:text-sm sm:px-3 sm:py-2 text-center  sm:mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
                   onClick={signUserOut}
                 >
                   Sign Out
@@ -59,21 +59,28 @@ export const ExpenseTracker = () => {
               </div>
             )}
           </h2>
-          <div className="flex justify-between gap-2 items-center text-3xl font-extrabold">
-            <p>Your Balance</p>
-            {balance >= 0 ? (
-              <p className="ml-4 p-2">Rs.{balance}</p>
-            ) : (
-              <p className="ml-4 p-2"> - Rs.{balance * -1}</p>
-            )}
-          </div>
-          <div className="">
-            <div className="flex justify-between flex items-center text-3xl font-extrabold">
-              <p>Income </p> <p className="ml-4 p-2"> Rs.{income}</p>
+          <div className="   rounded-lg p-4 px-8">
+            <div className="flex justify-between space gap-2 font-poppins  items-center  sm:text-3xl text-xl  font-medium">
+              <p>Your Balance</p>
+              {balance >= 0 ? (
+                <p className="ml-4 p-2  font-poppins font-medium">
+                  Rs.{balance}
+                </p>
+              ) : (
+                <p className="ml-4 p-2 font-poppins font-medium">
+                  {" "}
+                  - Rs.{balance * -1}
+                </p>
+              )}
             </div>
-            <div className="flex justify-between gap-x-3 flex items-center text-3xl font-extrabold">
-              <p>Expense </p>
-              <p className="ml-4 p-2"> Rs.{expenses}</p>
+            <div className="">
+              <div className="flex justify-between items-center font-poppins font-medium sm:text-3xl text-xl">
+                <p>Income </p> <p className="ml-4 p-2"> Rs.{income}</p>
+              </div>
+              <div className="flex justify-between  gap-x-3 font-poppins font-medium items-center sm:text-3xl text-xl">
+                <p>Expense </p>
+                <p className="ml-4 p-2"> Rs.{expenses}</p>
+              </div>
             </div>
           </div>
           <form
@@ -82,7 +89,7 @@ export const ExpenseTracker = () => {
             action=""
           >
             <input
-              className="mb-2 rounded-md p-2  border border-gray-300 text-gray-900"
+              className="mb-2 w-[100px] p-2 sm:w-60 rounded-md sm:p-2  border border-gray-300 bg-slate-200 text-gray-900"
               type="text"
               name=""
               value={description}
@@ -92,7 +99,7 @@ export const ExpenseTracker = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
-              className="mb-2 rounded-md p-2  border border-gray-300 text-gray-900"
+              className=" mb-2 w-[80px] p-2 sm:w-60 rounded-md sm:p-2  border border-gray-300 bg-slate-200 text-gray-900"
               type="number"
               name=""
               value={transactionAmount}
@@ -102,14 +109,14 @@ export const ExpenseTracker = () => {
               onChange={(e) => setTransactionAmount(e.target.value)}
             />
             <input
-              className="text-2xl"
+              className=""
               type="radio"
               id="expense"
               value="expense"
               checked={transactionType === "expense"}
               onChange={(e) => setTransactionType(e.target.value)}
             />
-            <label className="text-lg" htmlFor="expense">
+            <label className="sm:text-lg text-sm" htmlFor="expense">
               {" "}
               Expense
             </label>
@@ -120,47 +127,50 @@ export const ExpenseTracker = () => {
               checked={transactionType === "income"}
               onChange={(e) => setTransactionType(e.target.value)}
             />
-            <label className="text-lg" htmlFor="income">
+            <label className="sm:text-lg text-sm" htmlFor="income">
               {" "}
               Income
             </label>
-
-            <button
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="submit"
-            >
-              Add Transaction
-            </button>
+            <div className="flex justify-center items-center pt-4">
+              <button
+                className="text-white items-center bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="submit"
+              >
+                Add Transaction
+              </button>
+            </div>
           </form>
         </div>
       </div>
 
       {/* transactions */}
-      <div className="flex flex-col items-center bg-[#34435E] py-2 justify-center text-3xl font-extrabold ">
-        <h2 className="text-gray-900 py-4">Transactions</h2>
-        <ul className="">
-          {transactions.map((transaction) => {
-            const { description, transactionAmount, transactionType } =
-              transaction;
-            return (
-              <li className="bg-gray-500 p-4 px-6 rounded-lg my-3 flex flex-col items-center">
-                {" "}
-                <h4 className="mb-2"> {description} </h4>{" "}
-                <p>
-                  RS. {transactionAmount}{" "}
-                  <label
-                    style={{
-                      color: transactionType === "expense" ? "red" : "green",
-                    }}
-                    htmlFor=""
-                  >
-                    {transactionType}
-                  </label>{" "}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="grid grid-cols-3 bg-gray-200 sm:grid-cols-4 gap-4">
+        <h2 className="col-span-3 sm:col-span-4 text-center text-gray-900 font-poppins font-medium sm:text-3xl text-xl py-4">
+          Transactions
+        </h2>
+        {transactions.map((transaction, index) => {
+          const { description, transactionAmount, transactionType } =
+            transaction;
+          return (
+            <div key={index} className=" py-2 justify-center rounded-lg">
+              <ul className="">
+                <li className="bg-gray-300 font-poppins font-medium sm:text-xl text-xl p-4 px-6 rounded-lg my-3 flex flex-col items-center">
+                  <h4 className="mb-2">{description}</h4>
+                  <p>
+                    RS. {transactionAmount}{" "}
+                    <label
+                      style={{
+                        color: transactionType === "expense" ? "red" : "green",
+                      }}
+                    >
+                      {transactionType}
+                    </label>{" "}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          );
+        })}
       </div>
     </>
   );
