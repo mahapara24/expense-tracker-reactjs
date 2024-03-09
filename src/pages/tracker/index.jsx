@@ -39,16 +39,19 @@ export const ExpenseTracker = () => {
   };
   return (
     <>
-      <div className="text-gray-900 ">
-        <div className="flex flex-col items-center justify-between p-2 py-4">
+      <div className="text-gray-900  bg-[#0B1D51]/50 p-4 ">
+        <div className="flex  flex-col items-center justify-between p-2 py-4">
           {" "}
-          <h2 className="mb-4 text-3xl flex text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl  ">
+          <h2 className="mb-4 text-xl font-poppins font-medium text-[#FDE74C] flex text-center leading-none tracking-tight md:text-2xl lg:text-4xl  ">
             {name}'s Expense Tracker
             {profilePhoto && (
               <div className="ml-8 ">
-                <img className=" rounded rounded-[50px]" src={profilePhoto} />
+                <img
+                  className="sm:h-20 h-12  rounded-[50px]"
+                  src={profilePhoto}
+                />
                 <button
-                  className="text-white bg-gray-700 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-3 py-2 text-center me-2 mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
+                  className="text-white bg-gray-700 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium sm:rounded-full rounded-lg text-[8px] m-2 py-1 sm:text-sm sm:px-3 sm:py-2 text-center  sm:mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800"
                   onClick={signUserOut}
                 >
                   Sign Out
@@ -56,7 +59,7 @@ export const ExpenseTracker = () => {
               </div>
             )}
           </h2>
-          <div className="flex justify-between gap-2 flex items-center text-3xl font-extrabold">
+          <div className="flex justify-between gap-2 items-center text-3xl font-extrabold">
             <p>Your Balance</p>
             {balance >= 0 ? (
               <p className="ml-4 p-2">Rs.{balance}</p>
@@ -133,7 +136,7 @@ export const ExpenseTracker = () => {
       </div>
 
       {/* transactions */}
-      <div className="flex flex-col items-center py-2 justify-center text-3xl font-extrabold ">
+      <div className="flex flex-col items-center bg-[#34435E] py-2 justify-center text-3xl font-extrabold ">
         <h2 className="text-gray-900 py-4">Transactions</h2>
         <ul className="">
           {transactions.map((transaction) => {

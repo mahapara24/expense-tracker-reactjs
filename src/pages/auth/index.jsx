@@ -23,14 +23,14 @@ export const Auth = () => {
     return <Navigate to="/expense-tracker" />;
   }
   return (
-    <div className="flex flex-col pt-[30vh] items-center justify-center">
-      <p className="text-5xl font-extrabold p-6">
+    <div className="flex flex-col  items-center h-[100vh] w-full  bg-black text-white justify-center">
+      <p className="sm:text-5xl font-poppins text-center text-2xl font-semibold p-6 ">
         Sign In with Google to Continue
       </p>
       <button
         onClick={signInWithGoogle}
         type="button"
-        class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2"
+        class="text-black bg-[#4285F4] font-poppins font-semibold hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50  rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2"
       >
         <svg
           class="w-4 h-4 me-2"
