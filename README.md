@@ -2,7 +2,9 @@
 
 # Expense Tracker App (React.js)
 
-![Expense Tracker App Screenshot](screenshot.png)
+![Screenshot from 2024-03-10 01-57-36](https://github.com/mahapara24/expense-tracker-reactjs/assets/92634034/92331374-796d-4c25-94c5-6b413820ebbe)
+![Screenshot from 2024-03-10 01-58-22](https://github.com/mahapara24/expense-tracker-reactjs/assets/92634034/041ea82f-9da9-4dec-86bc-f2ce1af28272)
+
 
 This is a simple Expense Tracker application built with React.js. It allows users to keep track of their expenses by adding, editing, and deleting transactions. The app provides an overview of the total balance and income vs. expenses.
 
